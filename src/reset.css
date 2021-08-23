@@ -1,0 +1,22 @@
+.reset {
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    color: #22223B;
+    border-color: #22223B;
+    border-width: 0.125rem;
+}
+
+.reset:hover {
+    background-color: #4A4E69;
+    border-color: #4A4E69;
+    color: #F2E9E4;
+}
+
+
+
+.footer-btn {
+    display: block;
+    margin: 2rem auto;
+    align-items: center;
+}

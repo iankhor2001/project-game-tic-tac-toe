@@ -1,0 +1,11 @@
+table {
+    margin: auto;
+    width: 25rem;
+    height: 25rem;
+    border-collapse: collapse;
+    table-layout:fixed;
+}
+
+table td {
+    border: 3px groove #22223B;
+}
