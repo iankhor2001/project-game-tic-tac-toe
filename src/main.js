@@ -50,11 +50,18 @@ export default class Main extends Component {
         if(mode === "win") {
             this.banner.gameFinished("Winner : "+this.whichTurn);
             this.banner.setScore(this.whichTurn);
-        }
-        else if(mode === "tie") {
+            switch (this.whichTurn) {
+                case "O": 
+                    this.whichTurn = "X";
+                    break;
+                case "X":
+                    this.whichTurn = "O";
+                    break;
+            }
+        } else if(mode === "tie") {
             this.banner.gameFinished("Game Tied");
             console.log("Tied");
-        } // for later use
+        }
     }
 
     handleResetClick() {
@@ -65,7 +72,6 @@ export default class Main extends Component {
     }
 
     handleNextGameClick() {
-        this.whichTurn = "O";  
         this.nextGame.toggleDisableBtn();
         this.grid.reset(this.whichTurn);
         this.banner.turn.setTurn(this.whichTurn);
