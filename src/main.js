@@ -2,6 +2,7 @@ import Component from  './component.js';
 import Banner from  './banner.js';
 import Grid from  './grid.js';
 import Reset from  './reset.js';
+import NextGame from './next-game.js';
 import './navbar.css';
 import './main.css';
 
@@ -23,6 +24,9 @@ export default class Main extends Component {
         this.reset = new Reset(root.querySelector('.reset'));
         this.reset.on('click', this.handleResetClick.bind(this));
 
+        this.nextGame = new NextGame(root.querySelector('.next-game'));
+        this.nextGame.on('click', this.handleNextGameClick.bind(this));
+
         this.grid.setTurn(this.whichTurn);
     }
 
@@ -41,15 +45,16 @@ export default class Main extends Component {
     }
 
     handleFinishGame(firer, mode) {
+        this.nextGame.toggleDisableBtn();
+
         if(mode === "win") {
-            console.log("Game Won");
+            this.banner.gameFinished("Winner : "+this.whichTurn);
             this.banner.setScore(this.whichTurn);
         }
-        else if(mode === "tie") {} // for later use
-
-        this.whichTurn = "O";  
-        this.grid.reset(this.whichTurn);
-        this.banner.turn.setTurn(this.whichTurn);
+        else if(mode === "tie") {
+            this.banner.gameFinished("Game Tied");
+            console.log("Tied");
+        } // for later use
     }
 
     handleResetClick() {
@@ -57,6 +62,13 @@ export default class Main extends Component {
         this.whichTurn = "O";
         this.grid.reset(this.whichTurn);
         this.banner.reset();
+    }
+
+    handleNextGameClick() {
+        this.whichTurn = "O";  
+        this.nextGame.toggleDisableBtn();
+        this.grid.reset(this.whichTurn);
+        this.banner.turn.setTurn(this.whichTurn);
     }
 }
 

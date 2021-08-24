@@ -1,0 +1,15 @@
+.next-game {
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    color: #22223B;
+    border-color: #22223B;
+    border-width: 0.125rem;
+    margin-left: 1rem;
+}
+
+.next-game:hover {
+    background-color: #4A4E69;
+    border-color: #4A4E69;
+    color: #F2E9E4;
+}

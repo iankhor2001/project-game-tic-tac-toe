@@ -12,6 +12,10 @@ export default class Turn extends Component {
     }
 
     setTurn(x) {
+        this.root.textContent = "Turn : "+x;
+    }
+
+    gameFinished(x) {
         this.root.textContent = x;
     }
 }

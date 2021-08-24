@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.8.7",
-    "@fortawesome/fontawesome-free": "^5.15.4"
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "classlist": "^2.0.0"
   }
 }

@@ -30,6 +30,10 @@ export default class Banner extends Component {
         this.roles[x].setScore();
     }
 
+    gameFinished(x) {
+        this.turn.gameFinished(x);
+    }
+
     switchTurn(x) {
         this.turn.setTurn(x);
     }
